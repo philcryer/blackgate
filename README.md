@@ -1,4 +1,4 @@
 blackgate
 =========
 
-privacy and anonymity for anyone
+privacy and anonymity for everyone
