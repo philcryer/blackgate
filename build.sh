@@ -52,7 +52,7 @@ echo "P: Starting build of blackgate-${DATESTAMP}.iso"
 time lb build
 
 mv binary-hybrid.iso blackgate-${DATESTAMP}.iso
-md5sum binary-hybrid.iso blackgate-${DATESTAMP}.iso > binary-hybrid.iso blackgate-${DATESTAMP}.md5
+md5sum blackgate-${DATESTAMP}.iso > blackgate-${DATESTAMP}.md5
 
 echo "I: Build completed, filename blackgate-${DATESTAMP}.iso"
 
