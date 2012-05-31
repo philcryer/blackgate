@@ -49,7 +49,7 @@ chmod 755 config/chroot_local-hooks/*.sh
 
 echo "P: Starting build of blackgate-${DATESTAMP}.iso"
 
-lb build
+time lb build
 
 mv binary-hybrid.iso blackgate-${DATESTAMP}.iso
 md5sum binary-hybrid.iso blackgate-${DATESTAMP}.iso > binary-hybrid.iso blackgate-${DATESTAMP}.md5
