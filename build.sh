@@ -21,7 +21,7 @@ echo "P: Checking software sources"
 
 if [ ! -f "/etc/apt/sources.list.d/live-build.list" ]; then
 	echo "I: Installing live.debian.net software source"
- 	echo "deb http://live.debian.net/ ${CODENAME}-snapshots main contrib non-free\ndeb-src http://live.debian.net/ ${CODENAME}-snapshots main contrib non-free" > /etc/apt/sources.list.d/live-build.list
+ 	echo "deb http://live.debian.net/ ${CODENAME}-snapshots main contrib non-free" > /etc/apt/sources.list.d/live-build.list
 	wget http://live.debian.net/debian/project/keys/archive-key.asc -O - | apt-key add -
 	apt-get update; apt-get install live-build
 fi
