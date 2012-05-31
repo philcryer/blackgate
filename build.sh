@@ -33,19 +33,19 @@ if [ ! -d "blackgate-live-build" ]; then
 	mkdir blackgate-live-build
 fi
 
-echo "I: Installing hook files"
-cp hooks/*.sh blackgate-live-build/config/chroot_local-hooks/
-chmod 755 blackgate-live-build/config/chroot_local-hooks/*.sh
-
-#echo "I: Installing config files"
-#cp config/ blackgate-live-build/config/chroot_local-hooks/
-
 echo "P: Cleaning chroot environment"
 cd blackgate-live-build
 lb clean
 
 echo "P: Setting build configs"
 lb config --architecture i386 --archive-areas "main contrib non-free"
+
+echo "I: Installing hook files"
+cp ../hooks/*.sh config/chroot_local-hooks/
+chmod 755 config/chroot_local-hooks/*.sh
+
+#echo "I: Installing config files"
+#cp ../config/ config
 
 echo "P: Starting build of blackgate-${DATESTAMP}.iso"
 
