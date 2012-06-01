@@ -37,6 +37,9 @@ echo "P: Setting build configs"
 lb config --architecture i386 --archive-areas "main contrib non-free"; cd - > /dev/null
 
 echo "I: Installing hook files"
+if [ ! -d "/tmp/blackgate-live-build/config/chroot_local-hooks/" ]; then
+	mkdir -p /tmp/blackgate-live-build/config/chroot_local-hooks/
+fi
 cp hooks/*.sh /tmp/blackgate-live-build/config/chroot_local-hooks/
 chmod 755 /tmp/blackgate-live-build/config/chroot_local-hooks/*.sh
 
