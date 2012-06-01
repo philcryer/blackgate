@@ -6,7 +6,7 @@ echo "I: Installing i2p"
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EB2CC88B
 #For Debian Oldstable (Lenny) and Stable (Squeeze): Add the following entries to /etc/apt/sources.list.d/i2p.list
 #deb http://ppa.launchpad.net/i2p-maintainers/i2p/ubuntu natty main
-echo "deb http://ppa.launchpad.net/i2p-maintainers/i2p/ubuntu natty main" > /etc/sources.list.d/i2p.list
+echo "deb http://ppa.launchpad.net/i2p-maintainers/i2p/ubuntu natty main" > /etc/apt/sources.list.d/i2p.list
 #deb-src http://ppa.launchpad.net/i2p-maintainers/i2p/ubuntu natty main 
 #For Debian Testing (Wheezy) or Unstable (Sid), use the following: 
 #deb http://ppa.launchpad.net/i2p-maintainers/i2p/ubuntu precise main 
@@ -15,7 +15,7 @@ echo "deb http://ppa.launchpad.net/i2p-maintainers/i2p/ubuntu natty main" > /etc
 apt-get update
 #This command will retrieve the latest list of software from every repository enabled on your system, including the I2P PPA added in step 1.
 #You are now ready to install I2P! 
-apt-get install i2p
+apt-get install --yes --force-yes -y i2p
 #Post-install work
 #Using these I2P packages the I2P router can be started in the following three ways:
 #* "on demand" using the i2prouter script. Simply run "i2prouter start" from a command prompt. (Note: Do not use sudo or run it as root!)
