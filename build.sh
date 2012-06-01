@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DATESTAMP=`date "+%Y%m%d.%N"`
-CODENAME="squeeze"
+export CODENAME="squeeze"
 
 echo "P: blackGATE build started ${DATESTAMP}"
 
@@ -34,11 +34,11 @@ echo "P: Cleaning chroot environment"
 cd /tmp/blackgate-live-build; lb clean
 
 echo "P: Setting build configs"
-lb config --architecture i386 --archive-areas "main contrib non-free"; cd -
+lb config --architecture i386 --archive-areas "main contrib non-free"; cd - > /dev/null
 
 echo "I: Installing hook files"
-cp ../hooks/*.sh config/chroot_local-hooks/
-chmod 755 config/chroot_local-hooks/*.sh
+cp hooks/*.sh /tmp/blackgate-live-build/config/chroot_local-hooks/
+chmod 755 /tmp/blackgate-live-build/config/chroot_local-hooks/*.sh
 
 echo "I: Installing config files"
 #cp ../config/ config
