@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "I: Installing Tor"
 #Docs: https://www.torproject.org/docs/debian.html.en
-echo "deb     http://deb.torproject.org/torproject.org <DISTRIBUTION> main" > /etc/apt/sources.list.d/tor.list
+echo "deb     http://deb.torproject.org/torproject.org ${CODENAME} main" > /etc/apt/sources.list.d/tor.list
 #where you put the codename of your distribution (i.e. lenny, sid, maverick or whatever it is) in place of <DISTRIBUTION>.
 #Then add the gpg key used to sign the packages by running the following commands at your command prompt:
 gpg --keyserver keys.gnupg.net --recv 886DDD89
